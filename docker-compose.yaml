@@ -27,8 +27,18 @@ services:
     ports:
       - '8081:8081'
     container_name: docker-api
-    env_file:
-      - .env
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url" : "jdbc:postgresql://postgres:5432/docker-db",
+        "spring.datasource.driver-class-name" : "org.postgresql.Driver",
+        "spring.datasource.username" : "postgres",
+        "spring.datasource.password" : "postgres",
+        "spring.jpa.hibernate.ddl-auto" : "update",
+        "spring.jpa.database-platform" : "org.hibernate.dialect.PostgreSQLDialect",
+        "server.port" : "8081"
+      }'
+#    env_file:
+#      - .env
     depends_on:
       - postgres
       - pgadmin
