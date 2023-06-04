@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: ${POSTGRES_URL2}
+    url: ${POSTGRES_URL_DEV}
     driver-class-name: org.postgresql.Driver
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
@@ -11,3 +11,6 @@ spring:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  output:
+    ansi:
+      enabled: ALWAYS
