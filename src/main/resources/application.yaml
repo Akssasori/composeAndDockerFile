@@ -1,9 +1,9 @@
 server:
-  port: 8082
+  port: 8081
 
 spring:
   datasource:
-    url: ${POSTGRES_URL_DEV}
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:5432/docker-db}
     driver-class-name: org.postgresql.Driver
     username: ${POSTGRES_USER}
     password: ${POSTGRES_PASSWORD}
