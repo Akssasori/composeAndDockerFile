@@ -3,14 +3,24 @@ server:
 
 spring:
   datasource:
-    url: ${POSTGRES_URL_DEV}
+    url: jdbc:postgresql://localhost:5432/docker-db
     driver-class-name: org.postgresql.Driver
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
+    username: postgres
+    password: postgres
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   output:
     ansi:
       enabled: ALWAYS
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        orm:
+          jdbc:
+            bind: TRACE
