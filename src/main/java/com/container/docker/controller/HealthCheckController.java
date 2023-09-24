@@ -21,12 +21,7 @@ public class HealthCheckController {
 
     @GetMapping
     public ResponseEntity healthCheck() {
-        log.info("application is responding");
-        log.info("save object {}",
-                studentRepository.save(
-                new Student(null,"Lucas", "lucas@gmail.com")
-                )
-        );
+        log.info("save object {}", studentRepository.save(new Student(null,"Lucas", "lucas@gmail.com")));
         return ResponseEntity.ok().body("application is responding");
     }
 
