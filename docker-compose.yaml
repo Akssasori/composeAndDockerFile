@@ -12,6 +12,8 @@ services:
       POSTGRES_DB: docker-db
     ports:
       - '5432:5432' #frist value is port in your computer
+    volumes:
+      - pg-data:/var/lib/postgresql/data
     networks:
       - backend
   pgadmin:
@@ -54,5 +56,7 @@ services:
 networks:
   backend:
     driver: bridge
+volumes:
+  pg-data:
 
 

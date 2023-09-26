@@ -25,3 +25,6 @@ mvn package spring-boot:repackage >> usado para criar 0 .jar
 ### comando para criar a imagem
 docker build -t docker-api .
 
+#### comando para verificar os logs
+docker logs docker-api << nome do cantainer
+
